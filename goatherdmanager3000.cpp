@@ -12,15 +12,28 @@ using namespace std;
 
 const int SIZE = 15;
 
+// goat class
 class Goat {
   private:
     int age;
     string name;
     string color;
-    string names[SIZE] = {"Senior", "Godlike", "Old", "Mature", "Teen"};
-    string colors[SIZE] = {};
-
+    string names[SIZE] = {"Senior", "Godlike", "Old", "Mature", "Teen", "Natasha", "Mabel", "Rebecca", "Lina", "Osman", "Donovan", "Abbie", "Madiha", "Keziah", "Sienna"};
+    string colors[SIZE] = {"Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink", "Brown", "White", "Black", "Gray", "Lime", "Salmon", "Azure", "Maroon"};
+  
   public:
+    // default constructor
+    Goat() {
+      age = (rand() % 20) + 1;
+      name = names[rand() % 15];
+      color = colors[rand() % 15];
+    }
+    // paramterized constructor with typical 3-element parameter setup
+    Goat(int a, string n, string c) {
+      age = a;
+      name = n;
+      color = c;
+    }
 }
 
 
