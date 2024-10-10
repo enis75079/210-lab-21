@@ -7,7 +7,22 @@ IDE: vscode
 
 */
 #include <iostream>
+#include <string>
 using namespace std;
+
+const int SIZE = 15;
+
+class Goat {
+  private:
+    int age;
+    string name;
+    string color;
+    string names[SIZE] = {"Senior", "Godlike", "Old", "Mature", "Teen"};
+    string colors[SIZE] = {};
+
+  public:
+}
+
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
 
