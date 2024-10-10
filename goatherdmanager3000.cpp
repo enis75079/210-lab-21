@@ -38,9 +38,9 @@ class Goat {
 
     // displays the variables in Goat formatted
     void output() const {
-      cout << name << " (" << color << ", " << age << ")" << endl;
+      cout << "    " << name << " (" << color << ", " << age << ")" << endl;
     }
-}
+};
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
 
@@ -118,30 +118,6 @@ public:
         temp->next = newNode;
     }
 
-    void delete_node(Goat value) {
-        if (!head) return; // Empty list
-
-        Node* temp = head;
-        while (temp && temp->data != value)
-            temp = temp->next;
-
-        if (!temp) return; // Value not found
-
-        if (temp->prev) {
-            temp->prev->next = temp->next;
-        } else {
-            head = temp->next; // Deleting the head
-        }
-
-        if (temp->next) {
-            temp->next->prev = temp->prev;
-        } else {
-            tail = temp->prev; // Deleting the tail
-        }
-
-        delete temp;
-    }
-
     void print() {
         Node* current = head;
         if (!current) {
@@ -184,18 +160,17 @@ int main() {
     DoublyLinkedList list;
     int size = (rand() % 16) + 5;
 
-    for (int i = 0; i < size; ++i)
-        list.push_back(rand() % (MAX_NR-MIN_NR+1) + MIN_NR);
-    cout << "List forward: ";
+    for (int i = 0; i < size; ++i) {
+      Goat newGoat;
+      list.push_back(newGoat);
+    } 
+
+    cout << "forward: " << endl;
+    // forward 
     list.print();
 
-    cout << "List backward: ";
+    cout << "\nbackward: " << endl;
+    // print reversed
     list.print_reverse();
-
-    cout << "Deleting list, then trying to print.\n";
-    list.~DoublyLinkedList();
-    cout << "List forward: ";
-    list.print();
-
     return 0;
 }
