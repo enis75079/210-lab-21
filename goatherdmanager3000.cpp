@@ -1,3 +1,11 @@
+/*
+
+lab21: goat herd manager 3000
+COMSC-210
+Naveen Islam
+IDE: vscode
+
+*/
 #include <iostream>
 using namespace std;
 
